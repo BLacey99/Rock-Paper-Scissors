@@ -19,44 +19,18 @@ function humanPlay(){
     let choice = prompt("Please type either rock, paper, or scissors.");
     choice.toLowerCase();
     console.log(`You have chosen:${choice}.`);
-    if (choice = "rock"){
+    if (choice === "rock"){
         return "rock";
-    }else if (choice = "paper"){
+    }else if (choice === "paper"){
         return "paper";
-    }else if (choice = "scissors"){
+    }else if (choice === "scissors"){
         return "scissors";
     }else{
         alert("Error, please enter an answer.");
     }
 }
 
-
-/*
-function playRound(playerSelection, computerSelection){
-    if (playerSelection === "rock" && computerSelection === "rock"){
-        return "Draw.";
-    }else if (playerSelection === "rock" && computerSelection === "paper"){
-        return "Computer victory.";
-    }else if (playerSelection === "rock" && computerSelection === "scissors"){
-        return "Human victory.";
-    }
-    if (playerSelection === "paper" && computerSelection === "rock"){
-        return "Human victory.";
-    }else if (playerSelection === "paper" && computerSelection === "paper"){
-        return "Draw.";
-    }else if (playerSelection === "paper" && computerSelection === "scissors"){
-        return "Computer victory.";
-    }
-     if (playerSelection === "scissors" && computerSelection === "rock"){
-        return "Computer victory.";
-    }else if (playerSelection === "scissors" && computerSelection === "paper"){
-        return "Human victory.";
-    }else if (playerSelection === "scissors" && computerSelection === "scissors"){
-        return "Draw.";
-    }
-}*/
-
-    const playerSelection = humanPlay();
+    let playerSelection = humanPlay();
     const computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection){
