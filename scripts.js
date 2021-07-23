@@ -31,8 +31,8 @@ function humanPlay(){
 }
 
 
-
-/*function playRound(playerSelection, computerSelection){
+/*
+function playRound(playerSelection, computerSelection){
     if (playerSelection === "rock" && computerSelection === "rock"){
         return "Draw.";
     }else if (playerSelection === "rock" && computerSelection === "paper"){
@@ -56,34 +56,37 @@ function humanPlay(){
     }
 }*/
 
+    const playerSelection = humanPlay();
+    const computerSelection = computerPlay();
+
 function playRound(playerSelection, computerSelection){
     switch(playerSelection){
         case "rock": 
-            if (computerSelection = "rock"){
+            if (computerSelection === "rock"){
                 return "Draw.";
-            }else if (computerSelection = "paper"){
+            }else if (computerSelection === "paper"){
                 return "Computer victory.";
-            }else if (computerSelection = "scissors"){
+            }else if (computerSelection === "scissors"){
                 return "Human victory.";
             }
         
             break;
         case "paper":
-            if (computerSelection = "rock"){
+            if (computerSelection === "rock"){
                 return "Human victory.";
-            }else if (computerSelection = "paper"){
+            }else if (computerSelection === "paper"){
                 return "Draw.";
-            }else if (computerSelection = "scissors"){
+            }else if (computerSelection === "scissors"){
                 return "Computer victory.";
             }
         
             break;
         case "scissors":
-            if (computerSelection = "rock"){
+            if (computerSelection === "rock"){
                 return "Computer victory.";
-            }else if (computerSelection = "paper"){
+            }else if (computerSelection === "paper"){
                 return "Human victory.";
-            }else if (computerSelection = "scissors"){
+            }else if (computerSelection === "scissors"){
                 return "Draw.";
             }
         
@@ -92,15 +95,15 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-    let playerSelection = humanPlay();
-    let computerSelection = computerPlay();
+    
 
 /*function game(){
     console.log(playRound(playerSelection, computerSelection));
     humanPlay();
     computerPlay();
+    
     }
-}*/
+*/
 
 
 
