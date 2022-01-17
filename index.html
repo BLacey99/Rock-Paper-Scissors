@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
+
+<header>
+
+
+    <h1>Rock, Paper, Scissors</h1>
+
+</header>
+
 <body>
+
+    <div class="gameButtons">
+        <button class="start" onClick="game()">Start</button>
+        <button class="reset" onClick="reset()">Reset</button>
+    </div>
+
+    <div class="choicesContainer">
+        <div class=humanChoices>
+            <!---<button class="rock" type="submit" value="rock">Rock</button>
+            <button class="paper" type="submit" value="paper">Paper</button>
+            <button class="scissors" type="submit" value="scissors">Scissors</button>
+-->
+            <input type="image" onClick="rockValue()" value="rock" class="rock" src="imgs/rock.jpg" alt="Rock button" />
+            <input type="image" onClick="paperValue()" value="paper" class="paper" src="imgs/paper.png" alt="Paper button" />
+            <input type="image" onClick="scissorsValue()" value="scissors" class="scissors" src="imgs/scissors.png" alt="=Scissors button" />
+        </div>
+
+        <div class="computerChoices">
+            <img src="imgs/rock.jpg" alt="image of rock">
+            <img src="imgs/paper.png" alt="image of paper">
+            <img src="imgs/scissors.png" alt="image of scissors">
+
+        </div>
+    </div>
+
+
     <script>
-        game();
+       // game(); console game call
      //console.log(playRound(playerSelection, computerSelection));
     </script>
 </body>
+
+<footer>
+    <p>Filler</p>
+</footer>
+
 </html>
