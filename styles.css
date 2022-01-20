@@ -75,9 +75,10 @@ footer p{
   
 }
 
-.choicesContainer input{
-    height:12em;
+.humanChoices input{
+    height:150px;
     margin:0 2%;
+  
     border:solid 3px black;
 }
 
@@ -90,6 +91,7 @@ footer p{
 }
 
 
+
 .computerChoices{
     display:flex;
     flex-direction:row;
@@ -99,7 +101,7 @@ footer p{
 }
 .computerChoices img{
     margin:0 2%;
-    height:10em;
+    height:150px;
     border:solid 3px black;
     opacity:50%;
 }
