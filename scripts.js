@@ -1,12 +1,13 @@
 let i = 0;
 let choice;
 
-if(i>5){
-    console.log("Finished");
-}
+let compWin = 0;
+let humanWin = 0;
 
 function reset() {
     i = 0;
+    compWin = 0;
+    humanWin = 0;
     console.clear();
 }
 function rock() {
@@ -16,7 +17,22 @@ function rock() {
     i++;
     console.log(i);
     playRound(playerSelection, computerSelection);
+
+    if (i === 5) {
+        console.log("Finished");
+    }
+
+
+    if (compWin === 3) {
+        console.log("Computer Wins.");
+        
+    } else if (humanWin === 3) {
+        console.log("Human Wins.");
+
+    }
+
     return "rock";
+
 }
 function paper() {
     let playerSelection = humanPlay(choice);
@@ -25,6 +41,19 @@ function paper() {
     i++;
     console.log(i);
     playRound(playerSelection, computerSelection);
+
+    if (i === 5) {
+        console.log("Finished");
+    }
+
+
+    if (compWin === 3) {
+        console.log("Computer Wins.");
+    } else if (humanWin === 3) {
+        console.log("Human Wins.");
+
+    }
+
     return "paper";
 }
 
@@ -35,6 +64,19 @@ function scissors() {
     let playerSelection = humanPlay(choice);
     let computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+
+    if (i === 5) {
+        console.log("Finished");
+    }
+
+
+    if (compWin === 3) {
+        console.log("Computer Wins.");
+    } else if (humanWin === 3) {
+        console.log("Human Wins.");
+
+    }
+
     return "scissors";
 }
 
@@ -69,12 +111,19 @@ function playRound(playerSelection, computerSelection) {
         case "rock":
             if (computerSelection === "rock") {
                 console.log("Draw.");
+                i--;
                 return "Draw.";
             } else if (computerSelection === "paper") {
                 console.log("Computer victory.");
+                compWin++;
+                document.getElementById("computerPoints").innerHTML =`Computer Points: ${compWin}`;
+                console.log("Computer Score: " + compWin);
                 return "Computer victory.";
             } else if (computerSelection === "scissors") {
                 console.log("Human victory.");
+                humanWin++;
+                document.getElementById("humanPoints").innerHTML =`Human Points: ${humanWin}`;
+                console.log("Human Victory." + humanWin);
                 return "Human victory.";
             }
 
@@ -82,12 +131,20 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
             if (computerSelection === "rock") {
                 console.log("Human victory.");
+                humanWin++;
+                document.getElementById("humanPoints").innerHTML =`Human Points: ${humanWin}`;
+                console.log("Human Victory." + humanWin);
                 return "Human victory.";
             } else if (computerSelection === "paper") {
                 console.log("Draw.");
+                i--;
                 return "Draw.";
             } else if (computerSelection === "scissors") {
                 console.log("Computer victory.");
+                compWin++;
+                document.getElementById("computerPoints").innerHTML =`Computer Points: ${compWin}`;
+                console.log("Computer Score: " + compWin);
+
                 return "Computer victory.";
             }
 
@@ -95,12 +152,19 @@ function playRound(playerSelection, computerSelection) {
         case "scissors":
             if (computerSelection === "rock") {
                 console.log("Computer victory.");
+                compWin++;
+                document.getElementById("computerPoints").innerHTML =`Computer Points: ${compWin}`;
+                console.log("Computer Score: " + compWin);
                 return "Computer victory.";
             } else if (computerSelection === "paper") {
                 console.log("Human victory.");
+                humanWin++;
+                document.getElementById("humanPoints").innerHTML =`Human Points: ${humanWin}`;
+                console.log("Human Victory." + humanWin);
                 return "Human victory.";
             } else if (computerSelection === "scissors") {
                 console.log("Draw");
+                i--;
                 return "Draw.";
             }
 
@@ -110,9 +174,10 @@ function playRound(playerSelection, computerSelection) {
 
     playRound(playerSelection, computerSelection);
 
-   // function game() {
-       // console.clear();
+    // function game() {
+    // console.clear();
 
-    }
+}
+
 
 
