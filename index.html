@@ -21,16 +21,16 @@
 <body>
 
     <div class="gameButtons">
-        <button class="start" onClick="game()">Start</button>
+        <button class="start" onClick="start()">Start</button>
         <button class="reset" onClick="reset()">Reset</button>
     </div>
 
     <div class="choicesContainer">
         <div class=humanChoices>
           
-            <input type="image" onClick="rock()" value="rock" class="rock" src="imgs/rock.jpg" alt="Rock button" />
-            <input type="image" onClick="paper()" value="paper" class="paper" src="imgs/paper.png" alt="Paper button" />
-            <input type="image" onClick="scissors()" value="scissors" class="scissors" src="imgs/scissors.png" alt="=Scissors button" />
+            <input type="image" onClick="rock()" value="rock" id="rock" src="imgs/rock.jpg" alt="Rock button" />
+            <input type="image" onClick="paper()" value="paper" id="paper" src="imgs/paper.png" alt="Paper button" />
+            <input type="image" onClick="scissors()" value="scissors" id="scissors" src="imgs/scissors.png" alt="=Scissors button" />
         </div>
 
         <div class="points">
@@ -39,8 +39,8 @@
             
         </div>
 
-        <div class="results">
-            <h2>Winner</h2>
+        <div id="results">
+            <h2 id="winnerDeclaration">Winner</h2>
         </div>
       
     </div>

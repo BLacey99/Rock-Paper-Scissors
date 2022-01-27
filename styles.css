@@ -106,7 +106,7 @@ footer p{
 .humanChoices input{
     height:150px;
     margin:0 2%;
-  
+    visibility:hidden;
     border:solid 3px black;
 }
 
