@@ -1,13 +1,7 @@
 let i = 0;
 let choice;
-
 let compWin = 0;
 let humanWin = 0;
-
-
-
-
-
 
 function gameOver() {
     if (compWin === 3) {
@@ -15,31 +9,28 @@ function gameOver() {
         document.getElementById("rock").disabled = true;
         document.getElementById("paper").disabled = true;
         document.getElementById("scissors").disabled = true;
-
         document.getElementById("rock").style.opacity = "0.5";
         document.getElementById("paper").style.opacity = "0.5";
         document.getElementById("scissors").style.opacity = "0.5";
-
         document.getElementById("winnerDeclaration").innerHTML = "The Computer Won.";
         document.getElementById("results").style.visibility = "visible";
+        document.getElementById("start").disabled = true;
 
     } else if (humanWin === 3) {
         console.log("Human Wins.");
         document.getElementById("rock").disabled = true;
         document.getElementById("paper").disabled = true;
         document.getElementById("scissors").disabled = true;
-
         document.getElementById("rock").style.opacity = "0.5";
         document.getElementById("paper").style.opacity = "0.5";
         document.getElementById("scissors").style.opacity = "0.5";
-
         document.getElementById("winnerDeclaration").innerHTML = "The Human Won.";
         document.getElementById("results").style.visibility = "visible";
-
+        document.getElementById("start").disabled = true;
     }
 }
 
-function start(){
+function start() {
     document.getElementById("rock").disabled = false;
     document.getElementById("paper").disabled = false;
     document.getElementById("scissors").disabled = false;
@@ -50,8 +41,11 @@ function start(){
 
 
     document.getElementById("rock").style.opacity = "1";
-        document.getElementById("paper").style.opacity = "1";
-        document.getElementById("scissors").style.opacity = "1";
+    document.getElementById("paper").style.opacity = "1";
+    document.getElementById("scissors").style.opacity = "1";
+
+    document.getElementById("start").style.opacity = "0.5";
+    document.getElementById("start").disabled = true;
 }
 
 function reset() {
@@ -61,19 +55,21 @@ function reset() {
     console.clear();
     document.getElementById("computerPoints").innerHTML = `Computer Points: ${compWin}`;
     document.getElementById("humanPoints").innerHTML = `Human Points: ${humanWin}`;
-
     document.getElementById("rock").style.visibility = "hidden";
     document.getElementById("paper").style.visibility = "hidden";
     document.getElementById("scissors").style.visibility = "hidden";
-
-    document.getElementById("results").style.visibility ="hidden";
+    document.getElementById("results").style.visibility = "hidden";
+    document.getElementById("start").style.opacity = "1";
+    document.getElementById("start").disabled = false;
 
 }
+
 function rock() {
     let playerSelection = humanPlay(choice);
     let computerSelection = computerPlay();
     choice = "rock";
     i++;
+    document.getElementById("humanChoice").innerHTML = `Human Choice: Rock`;
     playRound(playerSelection, computerSelection);
     if (i === 5) {
         console.log("Finished");
@@ -82,11 +78,13 @@ function rock() {
     return "rock";
 
 }
+
 function paper() {
     let playerSelection = humanPlay(choice);
     let computerSelection = computerPlay();
     choice = "paper";
     i++;
+    document.getElementById("humanChoice").innerHTML = `Human Choice: Paper`;
 
     playRound(playerSelection, computerSelection);
 
@@ -100,10 +98,10 @@ function paper() {
 function scissors() {
     choice = "scissors";
     i++;
+    document.getElementById("humanChoice").innerHTML = `Human Choice: Scissors`;
     let playerSelection = humanPlay(choice);
     let computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
-
     if (i === 5) {
         console.log("Finished");
     }
@@ -115,12 +113,15 @@ function computerPlay() {
     const playMaker = Math.floor(Math.random() * 3)
     if (playMaker === 0) {
         console.log("The computer chose rock")
+        document.getElementById("compChoice").innerHTML = `Computer Choice: Rock`;
         return "rock";
     } else if (playMaker === 1) {
         console.log("The computer chose paper")
+        document.getElementById("compChoice").innerHTML = `Computer Choice: Paper`;
         return "paper";
     } else if (playMaker === 2) {
         console.log("The computer chose scissors")
+        document.getElementById("compChoice").innerHTML = `Computer Choice: Scissors`;
         return "scissors";
     }
 }
@@ -137,7 +138,6 @@ function humanPlay(choice) {
 }
 
 function playRound(playerSelection, computerSelection) {
-
     switch (playerSelection) {
         case "rock":
             if (computerSelection === "rock") {
@@ -157,7 +157,6 @@ function playRound(playerSelection, computerSelection) {
                 console.log("Human Victory." + humanWin);
                 return "Human victory.";
             }
-
             break;
         case "paper":
             if (computerSelection === "rock") {
@@ -175,10 +174,8 @@ function playRound(playerSelection, computerSelection) {
                 compWin++;
                 document.getElementById("computerPoints").innerHTML = `Computer Points: ${compWin}`;
                 console.log("Computer Score: " + compWin);
-
                 return "Computer victory.";
             }
-
             break;
         case "scissors":
             if (computerSelection === "rock") {
@@ -198,16 +195,8 @@ function playRound(playerSelection, computerSelection) {
                 i--;
                 return "Draw.";
             }
-
             break;
     }
-
-
-    
-
-    // function game() {
-    // console.clear();
-
 }
 
 

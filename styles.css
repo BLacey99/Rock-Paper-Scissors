@@ -108,6 +108,7 @@ footer p{
     margin:0 2%;
     visibility:hidden;
     border:solid 3px black;
+
 }
 
 .humanChoices{
@@ -135,3 +136,13 @@ footer p{
 }
 
 
+.announcements{
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+    flex-direction:column;
+    flex:1 0 auto;
+    flex-wrap:wrap;
+    margin-bottom:2%;
+}
