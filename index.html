@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
+
+<header>
+
+
+    <h1>Rock, Paper, Scissors</h1>
+
+</header>
+
 <body>
-    <script>
-        game();
-     //console.log(playRound(playerSelection, computerSelection));
-    </script>
+
+    <div class="gameButtons">
+        <button id="start" onClick="start()">Start</button>
+        <button id="reset" onClick="reset()">Reset</button>
+    </div>
+
+    <div class="choicesContainer">
+        <div class=humanChoices>
+          
+            <input type="image" onClick="rock()" value="rock" id="rock" src="imgs/rock.jpg" alt="Rock button" />
+            <input type="image" onClick="paper()" value="paper" id="paper" src="imgs/paper.png" alt="Paper button" />
+            <input type="image" onClick="scissors()" value="scissors" id="scissors" src="imgs/scissors.png" alt="=Scissors button" />
+        </div>
+
+        <div class="announcements">
+            <h2 id="compChoice"></h2>
+            <h2 id="humanChoice"></h2>
+        </div>
+
+        <div class="points">
+            <h2 id="humanPoints">Human Points: 0</h2>
+            <h2 id="computerPoints">Computer Points: 0</h2>
+            
+        </div>
+
+        <div id="results">
+            <h2 id="winnerDeclaration">Winner</h2>
+        </div>
+      
+    </div>
+
+
 </body>
+
+<footer>
+    <p>Filler</p>
+</footer>
+
 </html>
